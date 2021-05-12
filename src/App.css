@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+* {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgba(255, 255, 255, 0.815);
+  height: 60px;
+  padding: 5px 10px;
+  background: #67B26F;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.container {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.imageResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: 10px;
+}
+.searchInputs {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.imageBlock {
+  padding: 10px;
+  background: #43cea2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+position: relative;
+}
+.imageBlock p {
+  color: #fff;
+}
+.imageBlock img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 150px;
+  margin: auto;
+}
+.imageMetaBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.download_btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to right, #185a9d, #43cea2);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    padding: 0 5px;
+}
+.imageBlock:hover .download_btn {
+  display: block;
+}
+.views {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #185a9d, #43cea2);
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-weight: 600;
+}
+.visibleIcon {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.dialog_image {
+  width: 100%;
+  height: auto;
+}
+.imgpopUpHeader h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+.dialogBtn {
+  background: linear-gradient(to right, #185a9d, #43cea2);
+  position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.zoomIcon {
+
+}
+.dialogFooter {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  background: linear-gradient(to right, #4ca2cd, #67B26F);
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.imgpopUpHeader {
+  background: linear-gradient(to right, #4ca2cd, #67B26F);
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+span.tags {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
 }
