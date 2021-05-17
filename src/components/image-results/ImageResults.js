@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
-import { IconButton,Dialog,Zoom, Avatar,DialogActions,DialogTitle,DialogContent,Typography,Button } from '@material-ui/core'
+import { IconButton,Dialog, Avatar,DialogActions,DialogTitle,DialogContent } from '@material-ui/core'
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
-import Tooltip from '@material-ui/core/Tooltip';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
@@ -34,18 +33,18 @@ export const ImageResults = (props) => {
                     </div>
                     <div className="imageMetaRight">
                         <div title={props.user} aria-label={props.user}>
-                            <Avatar src={props.userImage} title={props.user} />
+                            <Avatar src={props.userImage} />
                         </div>
                     </div>
                 </div>
-                <a className="download_btn" href={props.imagePageUrl} target="_blank">
+                <a className="download_btn" href={props.imagePageUrl} target="_blank" rel="noreferrer">
                     <CloudDownloadIcon />
                 </a>
                 <span className="views" title="views">
                     <VisibilityIcon className="visibleIcon" />
                     {props.views}
                 </span>
-                <button className="dialogBtn" onClick={handleDialogOpen}>
+                <button className="dialogBtn" title="Click to view Large Image" onClick={handleDialogOpen}>
                     <ZoomInIcon className="zoomIcon"/>
                 </button>
                 <Dialog onClose={handleDialogClose} aria-labelledby="customized-dialog-title" open={openDialog}>
@@ -56,7 +55,7 @@ export const ImageResults = (props) => {
                     </IconButton>
                     </DialogTitle>
                     <DialogContent dividers>
-                        <img src={currentImg} className="dialog_image" />
+                        <img src={currentImg} className="dialog_image" alt={currentImgTags} />
                     </DialogContent>
                     <DialogActions class="dialogFooter">
                         <span className="tags" ><strong>Tags:</strong>&nbsp; {currentImgTags}</span>

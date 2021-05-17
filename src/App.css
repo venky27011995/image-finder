@@ -36,6 +36,7 @@ position: relative;
 }
 .imageBlock p {
   color: #fff;
+  font-size: 12px;
 }
 .imageBlock img {
   width: 100%;
@@ -97,9 +98,6 @@ position: relative;
     color: #fff;
     border: none;
     cursor: pointer;
-}
-.zoomIcon {
-
 }
 .dialogFooter {
   height: 40px;
